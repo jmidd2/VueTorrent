@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import dayjs from '@/plugins/dayjs'
 import { Torrent } from '@/types/vuetorrent'
-import { computed } from 'vue'
 import { DurationUnitType } from 'dayjs/plugin/duration'
+import { computed } from 'vue'
 
 const props = defineProps<{ torrent: Torrent; titleKey?: string; unit: DurationUnitType; value: (t: Torrent) => number }>()
 
@@ -27,7 +27,7 @@ const formattedDuration = computed(() => {
 </script>
 
 <template>
-  <div class="d-flex flex-column">
+  <div class="d-flex flex-column flex-grow-1" style="max-width: 100%; width: 8.333333%">
     <div v-if="titleKey" class="text-caption text-grey">
       {{ $t(titleKey) }}
     </div>
